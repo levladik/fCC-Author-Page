@@ -1,5 +1,3 @@
-# fCC-Author-Page
-
 # News Author Page
 
 This project is a simple web page that displays information about authors fetched from a JSON file. It utilizes HTML, CSS, and JavaScript to create a user interface that showcases authors' names, images, biographies, and links to their author pages.
