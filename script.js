@@ -11,8 +11,10 @@ fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
     authorDataArr = data;
     displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
   })
-  .catch((err) => console.error(`There was an error: ${err}`));
-
+  .catch((err) => {
+    authorContainer.innerHTML = '<p class="error-msg">There was an error loading the authors</p>';
+   });
+   
   const fetchMoreAuthors = () => {
     startingIndex += 8;
     endingIndex += 8;
@@ -22,6 +24,7 @@ fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
     if(authorDataArr.length <= endingIndex) {
       loadMoreBtn.disabled = true;
       loadMoreBtn.textContent = 'No more data to load';
+      loadMoreBtn.style.cursor = 'not-allowed';
     }
   }
 
